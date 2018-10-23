@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ChatApplication.ChatPage"
+             Padding="10,40,10,10"
+             BackgroundColor="White">
+    <AbsoluteLayout>
+        
+        <Grid VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0,0,1,0.5" AbsoluteLayout.LayoutFlags="All" >
+             
+            <Button Grid.Row="0" Grid.Column="0" Grid.RowSpan="2" Grid.ColumnSpan="2"
+                    Text="+" Clicked="Handle_Clicked_AddConversation" BackgroundColor="Olive" TextColor="Silver" >
+            </Button>
+            <ListView Grid.Row="2" Grid.Column="0" Grid.RowSpan="12"  Grid.ColumnSpan="2" 
+                      x:Name="ConversationsList" BackgroundColor="White" ItemSelected="Handle_ConversationSelected" SeparatorColor="Black"
+                      RowHeight="20">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding Recipient}" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+               
+            </ListView>
+                
+            <ListView Grid.Row="0" Grid.Column="2" Grid.RowSpan="12" Grid.ColumnSpan="4" 
+                      x:Name="MessagesList"  BackgroundColor="White" SeparatorColor="Transparent" RowHeight="14" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <Label Text="{Binding MessageText}" HorizontalTextAlignment="Start" FontSize="Micro"/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Entry Grid.Row="12" Grid.Column="2" Grid.RowSpan="2" Grid.ColumnSpan="3" 
+                   x:Name="MessageEntry" BackgroundColor="Silver" />
+            <Button Grid.Row="12" Grid.Column="5" Grid.RowSpan="2" Grid.ColumnSpan="1"
+                    Clicked="Handle_Clicked_SendButton" Text="Send" BackgroundColor="Green" TextColor="White">
+            </Button>
+        </Grid>
+        
+        
+    </AbsoluteLayout>
+    
+    
+</ContentPage>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             x:Class="ChatApplication.ChatServiceUriPage"
+             Padding="20,50,20,20">
+    
+    <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
+        <Label Text="Enter your Chat Service URI: " />
+        <Entry x:Name="uriEntry" Text="http://chatservicegithub.azurewebsites.net/" />
+        <Label Text="Enter your username: " />
+        <Entry x:Name="usernameEntry" />
+        <Button Text="Login" Clicked="Handle_Clicked" BackgroundColor="Green" TextColor="White"/>
+        <Button Text="Create User" Clicked="Handle_Clicked_CreateProfile" BackgroundColor="Black" TextColor="White"/>
+    </StackLayout>
+    
+</ContentPage>
