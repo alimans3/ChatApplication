@@ -7,6 +7,8 @@
     <StackLayout VerticalOptions="Start" HorizontalOptions="Center">
         <Label Text="Enter your Chat Service URI: " />
         <Entry x:Name="uriEntry" Text="http://chatservicegithub.azurewebsites.net/" />
+         <Label Text="Enter your Notification Service URI: " />
+        <Entry x:Name="notificationEntry" Text="http://chatnotificationservicegithub.azurewebsites.net/" />
         <Label Text="Enter your username: " />
         <Entry x:Name="usernameEntry" />
         <Button Text="Login" Clicked="Handle_Clicked" BackgroundColor="Green" TextColor="White"/>

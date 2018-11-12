@@ -7,5 +7,6 @@ namespace ChatApplication
         {
         }
         public string Recipient { get; set; }
+        public string Id { get; set; }
     }
 }

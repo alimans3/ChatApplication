@@ -18,7 +18,9 @@ namespace ChatApplication
         async void Handle_Clicked(object sender, System.EventArgs e)
         {
             var client = new ChatServiceClient(new Uri(uriEntry.Text));
+            var notificationUri = new Uri(new Uri(notificationEntry.Text), "notificationHub");
             CreateOrReplaceChatClient(client);
+            CreateOrReplaceNotificationUri(notificationUri);
 
             try
             {
@@ -59,6 +61,18 @@ namespace ChatApplication
             else
             {
                 Application.Current.Properties["ChatServiceClient"] = client;
+            }
+        }
+
+        void CreateOrReplaceNotificationUri(Uri notificationUri)
+        {
+            if (!Application.Current.Properties.TryGetValue("ChatServiceClient", out Object obj))
+            {
+                Application.Current.Properties.Add("NotificationUri", notificationUri);
+            }
+            else
+            {
+                Application.Current.Properties["NotificationUri"] = notificationUri;
             }
         }
     }
