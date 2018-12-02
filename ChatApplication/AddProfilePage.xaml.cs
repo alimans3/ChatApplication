@@ -26,7 +26,7 @@ namespace ChatApplication
                 });
 
                 await DisplayAlert("Created", $"Profile of {usernameEntry.Text} was created", "Continue");
-                ChatServiceUriPage.CreateOrReplaceCurrentProfile(new UserProfile(usernameEntry.Text, firstnameEntry.Text, lastnameEntry.Text));
+                ChatServiceUriPage.CreateOrReplaceObject("CurrentProfile",new UserProfile(usernameEntry.Text, firstnameEntry.Text, lastnameEntry.Text));
                 await Navigation.PushAsync(new ChatPage());
 
             }

@@ -17,7 +17,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <Label Text="{Binding Recipient}" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold"/>
+                            <Label Text="{Binding Recipient}" HorizontalTextAlignment="Center" FontSize="Small" FontAttributes="Bold" BackgroundColor="{Binding Color}"/>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>

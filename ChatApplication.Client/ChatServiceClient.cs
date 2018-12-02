@@ -202,7 +202,5 @@ namespace ChatApplication.Client
                     "Internal Server Error", HttpStatusCode.InternalServerError);
             }
         }
-        
-        
     }
 }
